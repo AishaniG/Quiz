@@ -1,3 +1,3 @@
 # NewProject
-The project is deployed in Netlify app:
+The project has been deployed in Netlify:
 https://ephemeral-lebkuchen-7ee487.netlify.app/
