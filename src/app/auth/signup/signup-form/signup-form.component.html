@@ -1,0 +1,25 @@
+
+<form class="mt-5" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <p>
+        <mat-form-field calss="w-75" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name">
+            <mat-error>Name is required!</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field calss="w-75" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email">
+            <mat-error>Email invalid</mat-error>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field calss="w-75" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+            <mat-error>Password should atleast be 5 letters</mat-error>
+        </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid">Signup</button>
+</form>

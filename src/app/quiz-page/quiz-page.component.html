@@ -1,0 +1,24 @@
+<div style="margin-left: 50px;">
+    <div style="display:flex; flex-direction: column; align-items: center; justify-content: center">
+        <h2>Score</h2>
+        <div>{{score}}/5</div>
+    </div>
+    <div class="container" *ngFor="let question of QuestionListConst" [ngClass]="question.questionId !== questionIdVisible ? 'hidden' : '' " >
+        <h3>{{question.questionTitle}}</h3>
+        <div class="question">
+            <div ngClass="answer" id="{{question.questionId}}-{{option.answerId}}" *ngFor="let option of question.options; let i = index" (click)="checkAnswer($event, option)" >
+                 {{i+1}}.   {{option.answerTitle}}
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary hidden" (click)="restartGame()">Retry</button>
+</div>
+<div class="leaderBoard hidden">
+    <h2>Leader Board</h2>
+    <ul>
+        <li *ngFor="let item of leaderBoard" class="leaderBoard-item">
+            {{item.userName}}  --- {{item.score}}
+        </li>
+    </ul>
+</div>
+
